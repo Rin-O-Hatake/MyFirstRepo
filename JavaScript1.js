@@ -1,11 +1,4 @@
 'use strict';
-function multiplyNumeric(obj)
-{
-    for(key in obj)
-    {
-        if(typeof obj[key] == "Number")
-        {
-            obj[key] *= 2; 
-        }
-    }
-}
+let Clone = { Name: 20 };
+let Clone2 = Object.assign({},Clone);
+alert(Clone.Name);
