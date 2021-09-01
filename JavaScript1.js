@@ -1,23 +1,16 @@
 'use strict';
 
-function Calculator() {
+function Accumulator(value)
+{
+    this.value = value;
+    this.read = function ()
+    {
+        this.value += +prompt("Сколько желаешь прибавить сударь))))","");
+    };
+}
+let accumulator = new Accumulator(1);
 
-    this.read = function() {
-      this.a = +prompt('a?', 0);
-      this.b = +prompt('b?', 0);
-    };
-  
-    this.sum = function() {
-      return this.a + this.b;
-    };
-  
-    this.mul = function() {
-      return this.a * this.b;
-    };
-  }
-  
-  let calculator = new Calculator();
-  calculator.read();
-  
-  alert( "Sum=" + calculator.sum() );
-  alert( "Mul=" + calculator.mul() );
+accumulator.read();
+accumulator.read();
+
+alert(accumulator.value);
