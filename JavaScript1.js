@@ -1,20 +1,23 @@
 'use strict';
 
-let calculator = {
-    read()
-    {
-        this.Number1 = +prompt("Значение 1 слогаемого","");
-        this.Number2 = +prompt("Значение 2 слогаемого",""); 
-    },
-    sum()
-    {
-        return this.Number1 + this.Number2;
-    },
-    mul()
-    {
-        return this.Number1 * this.Number2;
-    }
-};
-calculator.read();
-alert( calculator.sum() );
-alert( calculator.mul() );
+function Calculator() {
+
+    this.read = function() {
+      this.a = +prompt('a?', 0);
+      this.b = +prompt('b?', 0);
+    };
+  
+    this.sum = function() {
+      return this.a + this.b;
+    };
+  
+    this.mul = function() {
+      return this.a * this.b;
+    };
+  }
+  
+  let calculator = new Calculator();
+  calculator.read();
+  
+  alert( "Sum=" + calculator.sum() );
+  alert( "Mul=" + calculator.mul() );
