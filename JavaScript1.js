@@ -1,16 +1,13 @@
 'use strict';
-
-function Accumulator(value)
+let Index = Symbol("Id");
+let user = 
 {
-    this.value = value;
-    this.read = function ()
-    {
-        this.value += +prompt("Сколько желаешь прибавить сударь))))","");
-    };
+    Street : 23,
+    [Index] : "Key",
+};
+alert(user?.Street?.Flat);
+alert(user[Index]);
+for(let Use in user)
+{
+    alert(Use);
 }
-let accumulator = new Accumulator(1);
-
-accumulator.read();
-accumulator.read();
-
-alert(accumulator.value);
