@@ -1,13 +1,16 @@
 'use strict';
-let Index = Symbol("Id");
-let user = 
+function readNumber() 
 {
-    Street : 23,
-    [Index] : "Key",
-};
-alert(user?.Street?.Flat);
-alert(user[Index]);
-for(let Use in user)
-{
-    alert(Use);
+    let num;
+  
+    while ( isFinite(num) == false )
+    {
+        num = prompt("Введите число", 0);
+    }
+  
+    if (num === null || num === '') return null;
+  
+    return +num;
 }
+  
+alert(`Число: ${readNumber()}`);
