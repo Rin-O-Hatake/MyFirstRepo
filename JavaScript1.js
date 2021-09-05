@@ -1,35 +1,25 @@
 'use strict';
-// let styles  = ["Джаз", "Блюз"];
-// styles.push = ("Рок-н-ролл");
-// styles[Math.floor((styles.length - 1) / 2)]  = "Классика";
-// alert(styles.shift());
-// styles.unshift = ("Рэп","Регги")
-// alert(styles);
+// let names = 'Вася, Петя, Маша';
 
-
-
-function sumInput()
+// let arr = names.split(', ');
+function calculate(str)
 {
-    let Summ = [0];
-    let i = 1;
-    while(true)
+    let Summ;
+    let arr = str.split(" ");
+    switch(arr[1])
     {
-        Summ[i] = +prompt("A?","");
-        if(Summ[i] == null || Summ[i] == "" ||  !isFinite(Summ[i]) )
-        {
+        case "+": Summ = +arr[0] + +arr[2];
             break;
-        }
-        else i++;
+        case "-": Summ = +arr[0] -+arr[2];
+            break;
+        case "*": Summ = +arr[0] * +arr[2];
+            break;
+        case "**": Summ = Math.pow(+arr[0], +arr[2]);
+            break;
+        case "/": Summ = +arr[0] / +arr[2];
+            break;
     }
-    let Summa = 0;
-    for(let Sum of Summ)
-    {
-        if(isFinite(Sum))
-        {
-            Summa += Sum;
-        }
-        else break;
-    }
-    alert(Summa);
+    alert(Summ);
 }
-sumInput();
+let Prom = prompt("Введите выражение","");
+calculate(Prom);
